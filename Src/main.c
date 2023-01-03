@@ -4,8 +4,8 @@
  * Board            : STM32F407 DISCO Board
  * MCU              : STM32F407VG,
  * IDE              : STM32CUBEIDE Version 1.8.0
- * Datasheet        : Arm Cortex-M4 32b MCU+FPU, 100MHz, 125 DMIPS, 512KB Flash, 128KB RAM, USB OTG FS, 11 TIMs, 1 ADC, 13 comm. interfaces
- * Author           : Philip Zatta, PhD, Software Consultant, Embedded Software
+ * Datasheet        : Arm Cortex-M4 32b MCU+FPU, 168MHz
+ * Author           : Philip Zatta, PhD, Software Consultant, Embedded Software, LabView Software Consultant
  * Company          : EMBEDDED SOFTWARE AND SYSTEMS LLC
  * Description      : Set CPU maximum frequency to 168 MHz using HSE or HSI clock as PLL source (Board does not have an external crystal oscillator)
  *                    Output HSI clock on MCO1 (PA8) and System Clock on MCO2 (PC9)
@@ -15,7 +15,7 @@
  *
  * Comments/Explanations:
  *
- * Bare metal programming of ARM Cortex M4, ST STM32F407 Nucleo Board.
+ * Bare metal programming of ARM Cortex M4, ST STM32F407 Discovery Board.
  *  - Set CPU clock frequency to maximum frequency of 100 MHz.
     - Output HSI and System Clock sources onto MCO1 (PA8) and MCO2 (PC9), respectively.
  *
