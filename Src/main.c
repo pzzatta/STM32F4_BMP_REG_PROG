@@ -340,26 +340,18 @@ int main()
      RCC->CR |= PLLON;
      while ( ! (RCC->CR & PLLRDY ) ) {}
 
-
      //Step 7-Select the PLL as the system clock source and wait for PLL clock to be ready using RCC_CFGR register
      RCC->CFGR |= PLLSW1;
      RCC->CFGR &= ~ PLLSW0;
      while ( ! (RCC->CR & PLLSWS1) ) {}
 
-
      // Configure MCO1 and MCO2 pins
-     // Step 1: Select HSI as clock source for MCO1 (PA8) and set the prescaler using RCC_CFGR register.
+     // Step 8- Select HSI as clock source for MCO1 (PA8) and set the prescaler using RCC_CFGR register.
      RCC->CFGR &= ~ ( MCO1_0 | MCO1_1 ); // Clearing bits 0 and 1 to select HSI clock to output on MCO1 PA8 pin
      RCC->CFGR &= ~ ( MCO1_PRE_2 |  MCO1_PRE_1 |  MCO1_PRE_0); // clearing bits 0, 1 and 2 for no division
 
-     // Step 2: Select System Clock as clock source for MCO2 (PC9) and set the prescaler using RCC_CFGR register.
+     // Step 9- Select System Clock as clock source for MCO2 (PC9) and set the prescaler using RCC_CFGR register.
      RCC->CFGR &= ~ MCO2_1 ; // Clearing bits 0 and 1 to select System clock to output on MCO2 PC9 pin
      RCC->CFGR &= ~ MCO2_0 ;
-     //RCC->CFGR &= ~ ( MCO2_PRE_2 |  MCO2_PRE_1 |  MCO2_PRE_0 ); // clearing bits 2, 1 and 0
-     //RCC->CFGR &= ~  MCO2_PRE_2 ;
-     //RCC->CFGR &= ~  MCO2_PRE_1 ;
-     //RCC->CFGR &= ~  MCO2_PRE_0 ;
      RCC->CFGR |=   6   <<  27;   // Setting 100 for division of system clock by 2
-     */
-
  }
